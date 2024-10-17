@@ -1,0 +1,60 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using HelloWoldstem;
+
+namespace HelloWoldstem
+{
+    class Student
+    {
+        public string name;
+        public string address;
+        public double mark;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string Address
+        {
+            get { return address; }
+            set { address = value; }
+        }
+
+        public double Mark
+        {
+            get { return mark; }
+            set { mark = value; }
+        }
+    }
+
+    class StudentPrinter
+    {
+        public void PrintStudent(Student student1)
+        {
+            Console.WriteLine("\nStudent Details:");
+            Console.WriteLine("Name: " + student1.Name);
+            Console.WriteLine("Address: " + student1.Address);
+            Console.WriteLine("Mark: " + student1.Mark);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student student1 = new Student()
+            {
+                Name = "sajad",
+                Address = "123 Main St",
+                Mark = 87.5
+            };
+
+            StudentPrinter printer = new StudentPrinter();
+            printer.PrintStudent(student1);
+        }
+    }
+}
+
