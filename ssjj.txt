@@ -1,0 +1,73 @@
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using HelloWoldstem;
+
+namespace HelloWoldstem;
+
+
+
+using System;
+
+class Vehicle
+{
+    public string brand;
+    public int year;
+}
+
+class MotorVehicle : Vehicle
+{
+    public int engineCapacity;
+}
+
+class Car : MotorVehicle
+{
+    public int numberOfDoors;
+
+    public void DisplayCarInfo()
+    {
+        Console.WriteLine("Car Information:");
+        Console.WriteLine("Brand: " + brand);
+        Console.WriteLine("Year: " + year);
+        Console.WriteLine("Engine Capacity: " + engineCapacity + " cc");
+        Console.WriteLine("Number of Doors: " + numberOfDoors);
+    }
+}
+
+class Truck : MotorVehicle
+{
+    public int loadCapacity;
+
+    public void DisplayTruckInfo()
+    {
+        Console.WriteLine("Truck Information:");
+        Console.WriteLine("Brand: " + brand);
+        Console.WriteLine("Year: " + year);
+        Console.WriteLine("Engine Capacity: " + engineCapacity + " cc");
+        Console.WriteLine("Load Capacity: " + loadCapacity + " kg");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Car car = new Car();
+        car.brand = "Toyota";
+        car.year = 2020;
+        car.engineCapacity = 1800;
+        car.numberOfDoors = 4;
+
+        Truck truck = new Truck();
+        truck.brand = "Volvo";
+        truck.year = 2019;
+        truck.engineCapacity = 4000;
+        truck.loadCapacity = 10000;
+
+        car.DisplayCarInfo();
+        Console.WriteLine();
+        truck.DisplayTruckInfo();
+    }
+}
+
